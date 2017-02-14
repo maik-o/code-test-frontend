@@ -1,3 +1,9 @@
 <h1>
   {{title}}
 </h1>
+<ul>
+  <li *ngFor="let subscriber of subscriberInfo">
+    <h2>{{subscriber.name}}</h2>
+    <p>{{subscriber.subscription_level}}</p>
+  </li>
+</ul>
