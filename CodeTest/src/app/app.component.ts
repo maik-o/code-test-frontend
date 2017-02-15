@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { SubscriptionDataService } from './subscription-data-service';
+import { Subscriber } from './subscriber';
 
 @Component({
   selector: 'app-root',
@@ -8,12 +9,16 @@ import { SubscriptionDataService } from './subscription-data-service';
 })
 export class AppComponent {
   title = 'Subscriber Info';
-  subscriberInfo = [];
+  subscribers: Subscriber[] = [];
 
   constructor(private subscriptionDataService: SubscriptionDataService) {}
 
   ngOnInit(){
     this.subscriptionDataService.getSubscriptions()
-      .subscribe(subscriberInfo => this.subscriberInfo = subscriberInfo);
+      .subscribe(subscribers => this.subscribers = subscribers);
+  }
+
+  sortSubscribers(){
+    this.subscribers.sort( (a: Subscriber, b: Subscriber) => (a.subcription_price - b.subcription_price) );
   }
 }

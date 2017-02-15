@@ -1,8 +1,9 @@
 <h1>
   {{title}}
 </h1>
+<button (click)="sortSubscribers()">Sort</button>
 <ul>
-  <li *ngFor="let subscriber of subscriberInfo">
+  <li *ngFor="let subscriber of subscribers">
     <h2>{{subscriber.name}}</h2>
     <p>{{subscriber.subscription_level}}</p>
     <p>{{subscriber.subscription_price | currency:'USD':true }}
