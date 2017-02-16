@@ -1,12 +1,12 @@
 // Model for later extension
 export class Subscriber {
-  created_at: string;
-  email: string;
   id: number;
-  phone: string;
-  subscription_id: number;
-  updated_at: string;
   name: string;
-  subcription_level: string;
-  subcription_price: number;
+  email: string;
+  phone: string;
+  created_at: string;
+  updated_at: string;
+  subscription_id: number;
+  subscription_level: string;
+  subscription_price: number;
 }

@@ -2,6 +2,7 @@
   {{title}}
 </h1>
 <button (click)="sortSubscribers()">Sort</button>
+<button (click)="getAverageSubscription()">Average</button>
 <ul>
   <li *ngFor="let subscriber of subscribers">
     <h2>{{subscriber.name}}</h2>

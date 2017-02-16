@@ -9,7 +9,7 @@ import { Subscriber } from './subscriber';
 })
 export class AppComponent {
   title = 'Subscriber Info';
-  subscribers: Subscriber[] = [];
+  subscribers: Subscriber[];
 
   constructor(private subscriptionDataService: SubscriptionDataService) {}
 
@@ -19,6 +19,14 @@ export class AppComponent {
   }
 
   sortSubscribers(){
-    this.subscribers.sort( (a: Subscriber, b: Subscriber) => (a.subcription_price - b.subcription_price) );
+    this.subscribers.sort( (a: Subscriber, b: Subscriber) => (a.subscription_price - b.subscription_price) );
+  }
+
+  getAverageSubscription(){
+    var total = 0;
+    this.subscribers.forEach(
+      subscriber => total += subscriber.subscription_price
+    );
+    alert(total/this.subscribers.length);
   }
 }
